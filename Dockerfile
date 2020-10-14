@@ -3,7 +3,10 @@ FROM node:8.16.2-alpine as builder
 # Set a working directory
 WORKDIR /workspace
 
-RUN npm install babel-cli -S
+RUN npm install -- save-dev @babel/node
+RUN npm install -- save-dev @babel/preset-env
+RUN npm install -- save-dev @babel/preset-react
+RUN yarn install babel-cli -S
 
 RUN yarn install --production --no-progress
 RUN yarn run build --release
