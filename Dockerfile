@@ -17,7 +17,7 @@ RUN ls -l
 FROM node:8.16.2-alpine
 RUN ls -l
 # Set a working directory
-WORKDIR /usr/src/app
+WORKDIR /workspace
 RUN ls -l
 
 COPY ./build/package.json .
