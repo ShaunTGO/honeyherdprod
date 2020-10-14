@@ -11,10 +11,14 @@ RUN yarn add babel-cli -S
 RUN yarn install --production --no-progress
 RUN yarn run build --release
 
+RUN ls -l
+
 
 FROM node:8.16.2-alpine
+RUN ls -l
 # Set a working directory
 WORKDIR /usr/src/app
+RUN ls -l
 
 COPY ./build/package.json .
 COPY ./build/yarn.lock .
