@@ -29,10 +29,10 @@ export default function Header() {
             height="38"
             alt="React"
           />
-          <span className={s.brandTxt}>Your Company</span>
+          <span className={s.brandTxt}>Honey Herd Ranch</span>
         </Link>
         <div className={s.banner}>
-          <h1 className={s.bannerTitle}>React</h1>
+          <h1 className={s.bannerTitle}>Honey Herd Ranch</h1>
           <p className={s.bannerDesc}>Complex web apps made easy</p>
         </div>
       </div>
