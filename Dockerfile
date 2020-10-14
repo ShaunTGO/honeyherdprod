@@ -4,6 +4,7 @@ RUN ls -l
 # Set a working directory
 WORKDIR /workspace
 RUN ls -l
+RUN yarn install --production --no-progress
 RUN yarn run build --release
 
 
