@@ -1,4 +1,7 @@
 FROM node:8.16.2-alpine as builder
+# Set a working directory
+WORKDIR /usr/src/app
+
 RUN yarn run build --release
 
 
