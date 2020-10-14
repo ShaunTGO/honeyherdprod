@@ -5,7 +5,6 @@ WORKDIR /workspace
 
 RUN npm install babel-cli -S
 
-RUN yarn install --production --no-progress
 RUN yarn run build --release
 
 
