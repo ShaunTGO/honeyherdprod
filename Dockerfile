@@ -1,9 +1,6 @@
 FROM node:8.16.2-alpine
-RUN yarn run build
 # Set a working directory
 WORKDIR /usr/src/app
-
-RUN yarn run build --release
 
 COPY ./build/package.json .
 COPY ./build/yarn.lock .
