@@ -1,0 +1,14 @@
+name: honeyherdprod
+region: nyc
+services:
+    github:
+      branch: master
+      deploy_on_push: true
+      repo: ShaunTGO/honeyherdprod
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    name: honeyherdprod
+    routes:
+      - path: /
+    run_command: RUN yarn run build --release
