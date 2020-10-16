@@ -12,6 +12,7 @@ import Home from './Home';
 import Layout from '../../components/Layout';
 import Feed from '../../components/InstaFeed/Feed';
 import '../../components/InstaFeed/Feed.css';
+import Instagram from '../../../tools/lib/Instagram';
 
 async function action({ fetch }) {
   const resp = await fetch('/graphql', {
@@ -19,6 +20,9 @@ async function action({ fetch }) {
       query: '{news{title,link,content}}',
     }),
   });
+  const instaResp = await Instagram.getFeed('honeyherdRanch');
+
+  console.log('insta resp is ', instaResp);
   const { data } = await resp.json();
   if (!data || !data.news) throw new Error('Failed to load the news feed.');
   return {
@@ -26,11 +30,7 @@ async function action({ fetch }) {
     chunks: ['home'],
     component: (
       <Layout>
-        <Feed
-          userName="honeyherdranch"
-          className="Feed"
-          classNameLoading="Loading"
-        />
+        <Feed media={instaResp} />
         {/*<Home news={data.news} />*/}
       </Layout>
     ),
