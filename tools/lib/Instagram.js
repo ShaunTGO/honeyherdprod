@@ -2,8 +2,8 @@ const fetch = require('node-fetch')
 
 class Instagram {
   static getFeed(userName) {
-    const mapMedia = (json) => {
-      const thumbnailIndex = (node) => {
+    const mapMedia = json => {
+      const thumbnailIndex = node => {
         node.thumbnail_resources.forEach((item, index) => {
           if (item.config_width === 640) {
             return index;
@@ -39,6 +39,10 @@ class Instagram {
           return "";
         }
       };
+
+      console.log("json is: ", json);
+      console.log("json.entry_data is: ", json.entry_data);
+      console.log("json.entry_data.ProfilePage is: ", json.entry_data.ProfilePage);
 
       const edges =
         json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media
