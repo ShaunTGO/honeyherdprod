@@ -1,6 +1,7 @@
 name: honeyherdprod
 region: nyc
 services:
+  - dockerfile_path:
     github:
       branch: master
       deploy_on_push: true
@@ -11,4 +12,4 @@ services:
     name: honeyherdprod
     routes:
       - path: /
-    run_command: RUN yarn run build --release
+    run_command:
