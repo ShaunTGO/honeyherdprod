@@ -34,7 +34,7 @@ export default function Html({
           <link key={script} rel="preload" href={script} as="script" />
         ))}
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="apple-touch-icon" href="../../public/icon_nb_medium.png" />
         {styles.map(style => (
           <style
             key={style.id}

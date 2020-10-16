@@ -12,8 +12,8 @@ import React from 'react';
 import s from './Header.css';
 import Link from '../Link';
 import Navigation from '../Navigation';
-import logoUrl from './logo-small.png';
-import logoUrl2x from './logo-small@2x.png';
+import logoUrl from '../../../public/icon_nb_small.png';
+import logoUrl2x from '../../../public/icon_nb_medium.png';
 
 export default function Header() {
   useStyles(s);
@@ -33,7 +33,7 @@ export default function Header() {
         </Link>
         <div className={s.banner}>
           <h1 className={s.bannerTitle}>Honey Herd Ranch</h1>
-          <p className={s.bannerDesc}>Complex web apps made easy</p>
+          <p className={s.bannerDesc}>Raising Bees and Black Angus</p>
         </div>
       </div>
     </div>

@@ -10,6 +10,8 @@
 import React from 'react';
 import Home from './Home';
 import Layout from '../../components/Layout';
+import Feed from '../../components/InstaFeed/Feed';
+import '../../components/InstaFeed/Feed.css';
 
 async function action({ fetch }) {
   const resp = await fetch('/graphql', {
@@ -24,7 +26,12 @@ async function action({ fetch }) {
     chunks: ['home'],
     component: (
       <Layout>
-        <Home news={data.news} />
+        <Feed
+          userName="honeyherdranch"
+          className="Feed"
+          classNameLoading="Loading"
+        />
+        {/*<Home news={data.news} />*/}
       </Layout>
     ),
   };
