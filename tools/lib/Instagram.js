@@ -2,6 +2,8 @@ const fetch = require('node-fetch')
 
 class Instagram {
   static getFeed(userName) {
+    console.log ("Beginning getFeed function");
+
     const mapMedia = json => {
       const thumbnailIndex = node => {
         node.thumbnail_resources.forEach((item, index) => {

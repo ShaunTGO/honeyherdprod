@@ -30,7 +30,7 @@ async function action({ fetch }) {
     chunks: ['home'],
     component: (
       <Layout>
-        <Feed media={instaResp} />
+        {/*<Feed media={instaResp} />*/}
         {/*<Home news={data.news} />*/}
       </Layout>
     ),
