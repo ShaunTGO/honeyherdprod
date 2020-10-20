@@ -8,43 +8,22 @@
  */
 
 import React from 'react';
-import Home from './Home';
 import Layout from '../../components/Layout';
-import Feed from '../../components/InstaFeed/Feed';
-import '../../components/InstaFeed/Feed.css';
-import Instagram from '../../../tools/lib/Instagram';
+import Home from './Home';
 
 async function action({ fetch }) {
-  /*const resp = await fetch('/graphql', {
-    body: JSON.stringify({
-      query: '{news{title,link,content}}',
-    }),
-  });*/
-  // const instaResp = await Instagram.getFeed('honeyherdRanch');
+  const resp = await fetch('https://honeyherdheroku.herokuapp.com/token.json');
 
-  // console.log('insta resp is ', instaResp);
-  // const { data } = await resp.json();
-  // if (!data || !data.news) throw new Error('Failed to load the news feed.');
+  const tokenObj = await resp.json();
 
-  let feed = new Instafeed({
-    accessToken: 'your-token'
-  });
-  feed.run();
+  if (!tokenObj || !tokenObj.token) throw new Error('Failed to load the token');
 
   return {
     title: 'Honey Herd Ranch',
     chunks: ['home'],
     component: (
       <Layout>
-        <script type="text/javascript" src="../../../tools/lib/instafeed.min.js" />
-        <div id="instafeed" />
-
-        <script src="https://honeyherdheroku.herokuapp.com/token.js" />
-        <script type="text/javascript">
-
-        </script>
-        {/*<Feed media={instaResp} />*/}
-        {/*<Home news={data.news} />*/}
+        <Home token={tokenObj.token} />
       </Layout>
     ),
   };

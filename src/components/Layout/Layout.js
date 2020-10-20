@@ -22,6 +22,7 @@ export default function Layout({ children }) {
   useStyles(s, normalizeCss);
   return (
     <>
+      <script src="https://honeyherdheroku.herokuapp.com/token.js" />
       <Header />
       {children}
       <Feedback />
